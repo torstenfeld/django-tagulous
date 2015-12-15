@@ -810,7 +810,7 @@ class TagTreeModel(BaseTagTreeModel, TagModel):
         'self', null=True, blank=True, related_name='children',
         on_delete=models.CASCADE, db_index=True,
     )
-    path        = models.TextField(unique=True)
+    path        = models.CharField(max_length=255)
     label       = models.CharField(
         max_length=255, help_text='The name of the tag, without ancestors',
     )
